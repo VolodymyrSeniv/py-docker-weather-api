@@ -2,8 +2,8 @@ import requests
 import os
 
 
-def get_weather(key: str, city: str) -> None:
-    url = "http://api.weatherapi.com/v1/current.json/current.json"
+def get_weather(key: str, city: str) -> str:
+    url = "http://api.weatherapi.com/v1/current.json"
     data = requests.get(f"{url}?key={key}&q={city}")
     city_get = data.json()["location"]["name"]
     country = data.json()["location"]["country"]

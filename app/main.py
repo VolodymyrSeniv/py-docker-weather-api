@@ -5,7 +5,7 @@ import os
 def get_weather(key: str, city: str) -> str:
     url = "http://api.weatherapi.com/v1/current.json"
     data = requests.get(f"{url}?key={key}&q={city}")
-    if data.status_code==200:
+    if data.status_code == 200:
         city_get = data.json()["location"]["name"]
         country = data.json()["location"]["country"]
         time = data.json()["location"]["localtime"]
